@@ -32,11 +32,11 @@ export default {
     removeFunction: Function,
     addFunction: Function
   },
-  methods: {
-    addFunction() {
-      this.cart.push
-    }
-  },
+  // methods: {
+  //   addFunction() {
+  //     this.cart.push
+  //   }
+  // },
   computed: {
     typeOfItem(){
       return this.item.constructor.name;
