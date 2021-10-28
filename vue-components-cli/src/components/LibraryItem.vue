@@ -7,10 +7,10 @@
       <component :is="typeOfItem" :item="item"></component>
     </div>
     <div class="card-footer">
-      <button @click="item.checkOut()" class="btn btn-secondary">Check Out</button>
-      <button @click="item.checkIn()" class="btn btn-secondary">Check In</button>
+      <button v-if="item.isAvailable()" @click="item.checkOut()" class="btn btn-secondary">Check Out</button>
+      <button v-else @click="item.checkIn()" class="btn btn-secondary">Check In</button>
       <button @click="item.remove()" class="btn btn-warning">Remove Me</button>
-      <button @click="addFunction(item)" class="btn btn-danger">To Cart</button>
+      <button @click="addToCart(item)" class="btn btn-danger">Add To Cart</button>
     </div>
   </div>
 </template>
@@ -30,7 +30,7 @@ export default {
   props: {
     item: Object,
     removeFunction: Function,
-    addFunction: Function
+    addToCart: Function
   },
   // methods: {
   //   addFunction() {

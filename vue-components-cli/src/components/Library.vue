@@ -2,7 +2,8 @@
   <div class="card-columns">
     <library-item v-for="(item, i) in library"
                   :item="item"
-                  :remove-function="function(item){library.removeItem(item)}"
+                  :remove-function="item => library.removeItem(item)"
+                  :add-to-cart="addToCart"
                   :key="i"
     ></library-item>
     <div class="card">
@@ -21,6 +22,9 @@ export default {
   components: {
     LibraryItem
   },
+  props: {
+    addToCart: Function
+  },
   data() {
     return {
       //library: libraryCollection
@@ -28,7 +32,7 @@ export default {
           .addItem(new Book('Interaction Design', 200))
           .addItem(new Movie('Paw Patrol!', 78))
           .addItem(new Movie('Harriet', 122))
-          .addItem(new Album('Bob Marley', 50))
+          .addItem(new Album('Freedom','Bob Marley', 50))
           .addItem(new Book('Brown Bear, Brown Bear', 0))
     }
   },

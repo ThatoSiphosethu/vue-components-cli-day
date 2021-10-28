@@ -1,10 +1,14 @@
 <template>
-$END$
+  <div>
+    <h3>Items In Cart</h3>
+    <li class="list-group-item"></li>
+  </div>
+
 </template>
 
 <script>
 export default {
-name: "CartItems"
+  name: "CartItems"
 }
 </script>
 

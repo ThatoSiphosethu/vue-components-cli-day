@@ -32,7 +32,7 @@ function LibraryCollection(){
     }
 
     arr.removeItem = function(item){
-        console.log(item, this);
+
         this.splice(this.indexOf(item), 1);
 
         return this;

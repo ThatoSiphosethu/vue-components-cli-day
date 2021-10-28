@@ -1,23 +1,29 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <hello-tre msg="Welcome to Your Vue.js App 2"/>
-    <HelloTre :msg="Goodbye"></HelloTre>
-    <library></library>
+
+    <library :add-to-cart="(item) => cart.addItem(item)"></library>
+    <cart
+      :cart="cart"
+    />
   </div>
 </template>
 
 <script>
-import HelloTre from "@/components/HelloWorld";
 import Library from "@/components/Library";
+import CartModel from "./models/Cart";
+import Cart from "./components/Cart";
 
 export default {
   name: 'App',
   data(){
-    return {Goodbye: 'Goodbyess'}
+    return {
+
+      cart: new CartModel(),
+    }
   },
   components: {
-    HelloTre,
+    Cart,
     Library,
   }
 }

@@ -42,9 +42,10 @@ function Book(title, pages){
     this.id = Math.floor(Math.random() * 10e16);
 }
 
-function Album(title, trackCount){
-    this.trackCount = trackCount;
+function Album(title,artist, trackCount){
     this.title = title || 'Default Title';
+    this.trackCount = trackCount;
+    this.artist = artist || '';
     this.id = Math.floor(Math.random() * 10e16);
 }
 

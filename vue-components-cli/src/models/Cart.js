@@ -1,44 +1,33 @@
-import {LibraryItem} from "@/models/LibraryItems";
+import CartItem from "./CartItem";
 
-function LibraryCollection(){
+export default function Cart(){
     let arr = [];
 
     arr.addItem = function(item){
-        this.push(new LibraryItem(
-            item,
-            // option 1
-            // (item) => this.removeItem(item)
-            // option 2
-            ((collection) => function(){
-                collection.removeItem(this); // "this" refers to the LibraryItem
-            })(this) // "this" refers to the array/collection
-            // option 3
-            // (function(collection){
-            //     return function(){
-            //         collection.removeItem(this); // "this" refers to the LibraryItem
-            //     }
-            // })(this),
 
-        ));
+        this.push(new CartItem(item,((collection) => function(){
+            collection.removeItem(this); // "this" refers to the LibraryItem
+        })(this)));
 
         // allows us to chain methods
         return this;
     }
 
-    arr.checkedOutItems = function(){
-        return this.filter(function(item){
-            return !item.isAvailable();
-        })
-    }
-
     arr.removeItem = function(item){
-        console.log(item, this);
+
         this.splice(this.indexOf(item), 1);
 
         return this;
     }
 
+    arr.checkout = function () {
+        this.forEach((CartItem) => {
+            CartItem.checkout()
+        })
+
+        this.splice(0);
+    }
+
     return arr;
 }
 
-export default LibraryCollection;

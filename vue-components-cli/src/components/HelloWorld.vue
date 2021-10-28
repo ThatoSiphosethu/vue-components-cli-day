@@ -3,23 +3,22 @@
     <h1>{{ msg }}</h1>
     <p class="book">Book Title: {{book.title}}</p>
     <book-component :item="book"></book-component>
-    <cart/>
 
-    <div v-if="page === 'HelloWorld'">
-      <h1>Home</h1>
-    </div>
+
+<!--    <div v-if="page === 'HelloWorld'">-->
+<!--      <h1>Home</h1>-->
+<!--    </div>-->
   </div>
 </template>
 
 <script>
 import {Book, Movie} from "@/models/LibraryItems";
 import BookComponent from "@/components/Book";
-import Cart from "./Cart";
 
 export default {
   name: 'HelloWorld',
   components: {
-    Cart,
+
     BookComponent
   },
   props: {
