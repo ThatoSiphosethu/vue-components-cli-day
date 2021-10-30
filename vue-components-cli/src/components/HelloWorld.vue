@@ -5,20 +5,18 @@
     <book-component :item="book"></book-component>
 
 
-<!--    <div v-if="page === 'HelloWorld'">-->
-<!--      <h1>Home</h1>-->
-<!--    </div>-->
+    <!--    <div v-if="page === 'HelloWorld'">-->
+    <!--      <h1>Home</h1>-->
+    <!--    </div>-->
   </div>
 </template>
 
 <script>
 import {Book, Movie} from "@/models/LibraryItems";
 import BookComponent from "@/components/Book";
-
 export default {
   name: 'HelloWorld',
   components: {
-
     BookComponent
   },
   props: {
