@@ -132,6 +132,24 @@ export default {
       window.open(album.collectionViewUrl, '_blank')
     }
   }
+  // mounted() {
+  //   axios
+  //       .get('https://itunes.apple.com/search?', {
+  //         params: {
+  //           term: this.search,
+  //           entity: 'movie',
+  //           limit: 10,
+  //         },
+  //       })
+  //       .then(response => {
+  //         this.info = response.data.results
+  //       })
+  //       .catch(error => {
+  //         console.log(error)
+  //         this.errored = true
+  //       })
+  //       .finally(() => (this.loading = false))
+  // },
 }
 </script>
 
